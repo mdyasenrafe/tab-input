@@ -48,7 +48,7 @@ const App = () => {
   console.log(tabsData);
   return (
     <div className="m-[16px]">
-      <div className="tab-bar flex space-x-2">
+      <div className="tab-bar flex  flex-wrap mb-2">
         {tabsData.map((tabIndex, index) => (
           <div
             key={index}
@@ -56,9 +56,9 @@ const App = () => {
               activeTab === index
                 ? "bg-blue-500 text-white"
                 : "border border-blue-500"
-            } flex items-center px-4`}
+            } flex items-center px-2 md:px-4 mb-2 h-[40px] mr-2`}
           >
-            <div onClick={() => switchTab(index)} className="px-2 py-2">
+            <div onClick={() => switchTab(index)} className="px-2">
               <p>TAB {index + 1}</p>
             </div>
             {tabsData.length > 1 && (
@@ -73,7 +73,7 @@ const App = () => {
         {tabsData.length < 5 && (
           <button
             onClick={addTab}
-            className="add-button bg-blue-500 text-white px-4 py-2 rounded"
+            className="add-button bg-blue-500 text-white px-4 py-2 rounded h-[40px] flex items-center justify-center"
           >
             +
           </button>
